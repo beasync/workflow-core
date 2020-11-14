@@ -1,7 +1,7 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using System;
 using WorkflowCore.Persistence.EntityFramework.Models;
 using WorkflowCore.Persistence.EntityFramework.Services;
 
@@ -21,7 +21,7 @@ namespace WorkflowCore.Persistence.MySQL
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseMySql(_connectionString, _mysqlOptionsAction);
+            optionsBuilder.UseMySql(_connectionString, ServerVersion.AutoDetect(_connectionString), _mysqlOptionsAction);
         }
 
         protected override void ConfigureSubscriptionStorage(EntityTypeBuilder<PersistedSubscription> builder)

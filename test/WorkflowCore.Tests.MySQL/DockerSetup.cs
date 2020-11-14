@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
-using Docker.Testify;
-using Xunit;
-using MySql.Data.MySqlClient;
+﻿using Docker.Testify;
+using MySqlConnector;
 using System;
+using System.Collections.Generic;
+using Xunit;
 
 namespace WorkflowCore.Tests.MySQL
 {
